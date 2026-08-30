@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cabar Oğlu</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #0d0d0d;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        /* Üst Profil Barı */
+        .header-avatars {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding: 20px 10px;
+            background: #151515;
+            flex-wrap: wrap;
+        }
+
+        .avatar-frame {
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            padding: 4px;
+            background: linear-gradient(135deg, #e6e6e6, #ffffff, #8c8c8c, #ffffff, #595959);
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .avatar-frame.center-logo {
+            width: 90px;
+            height: 90px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
+        }
+
+        .avatar-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        /* Menü Ürün Alanı */
+        .menu-container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .product-card {
+            background: #1a1a1a;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 25px;
+            border: 1px solid #333;
+        }
+
+        .product-card img {
+            width: 100%;
+            max-height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .product-row {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .product-row .product-card {
+            flex: 1;
+        }
+
+        .price-neon {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #d400ff;
+            text-shadow: 0 0 5px #d400ff, 0 0 10px #d400ff, 0 0 20px #d400ff;
+            margin-top: 10px;
+        }
+
+        /* İletişim Alanı */
+        .contact-box {
+            border: 2px solid #00f0ff;
+            box-shadow: 0 0 15px #00f0ff;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 30px auto;
+            max-width: 500px;
+            background: #111;
+        }
+
+        .contact-title {
+            color: #00f0ff;
+            text-shadow: 0 0 8px #00f0ff;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .btn-contact {
+            display: block;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 6px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-wa { background: #25D366; }
+        .btn-fb { background: #0084FF; }
+    </style>
+</head>
+<body>
+
+    <div class="header-avatars">
+        <div class="avatar-frame"><img src="resim-url-buraya" alt="Atatürk"></div>
+        <div class="avatar-frame"><img src="resim-url-buraya" alt="Metehan"></div>
+        <div class="avatar-frame center-logo"><img src="resim-url-buraya" alt="Cabar Oğlu Logo"></div>
+        <div class="avatar-frame"><img src="resim-url-buraya" alt="Fatih Sultan Mehmet"></div>
+        <div class="avatar-frame"><img src="resim-url-buraya" alt="Ata 4"></div>
+        <div class="avatar-frame"><img src="resim-url-buraya" alt="Ata 5"></div>
+    </div>
+
+    <div class="menu-container">
+        <div class="product-card">
+            <img src="resim-url-buraya" alt="Katmer">
+            <h3>Katmer</h3>
+            <div class="price-neon">85 TL</div>
+        </div>
+
+        <div class="product-row">
+            <div class="product-card">
+                <img src="resim-url-buraya" alt="Bükme">
+                <h3>Bükme</h3>
+            </div>
+            <div class="product-card">
+                <img src="resim-url-buraya" alt="Yufka">
+                <h3>Yufka</h3>
+            </div>
+        </div>
+        
+        <div class="product-card">
+            <img src="resim-url-buraya" alt="Bazlama">
+            <h3>Bazlama</h3>
+            <div class="price-neon">30 TL</div>
+        </div>
+
+        <div class="product-row">
+            <div class="product-card">
+                <img src="resim-url-buraya" alt="Poğaça">
+                <h3>Poğaça</h3>
+            </div>
+            <div class="product-card">
+                <img src="resim-url-buraya" alt="Simit">
+                <h3>Simit</h3>
+            </div>
+        </div>
+        <div class="price-neon">20 TL</div>
+
+        <div class="contact-box">
+            <div class="contact-title">İLETİŞİM</div>
+            <a href="https://wa.me/905312092005" class="btn-contact btn-wa">WhatsApp 1 (+90 531 209 20 05)</a>
+            <a href="https://wa.me/905462099151" class="btn-contact btn-wa">WhatsApp 2 (+90 546 209 91 51)</a>
+            <a href="https://m.me/Cabaroglu" class="btn-contact btn-fb">Facebook Messenger (Cabar oğlu)</a>
+        </div>
+    </div>
+
+</body>
+</html>
