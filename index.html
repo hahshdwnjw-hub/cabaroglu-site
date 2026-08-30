@@ -43,13 +43,43 @@
             outline: none;
         }
 
-        /* Başlık */
-        h1.title {
-            margin-top: 40px;
+        /* Üst Profil Barı (Atatürk ve Kurt Logoları) */
+        .header-avatars {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 50px;
             margin-bottom: 25px;
-            font-size: 2.2rem;
-            color: #ff007f;
-            text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+            flex-wrap: nowrap;
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .avatar-frame {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            padding: 3px;
+            background: linear-gradient(135deg, #e6e6e6, #ffffff, #8c8c8c, #ffffff, #595959);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .avatar-frame.center-logo {
+            width: 85px;
+            height: 85px;
+            box-shadow: 0 0 18px rgba(255, 255, 255, 0.9), 0 0 10px #ff007f;
+        }
+
+        .avatar-frame img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
         }
 
         /* Ürünler Izgarası */
@@ -104,6 +134,124 @@
         .contact-box h2 {
             color: #00f3ff;
             text-shadow: 0 0 10px #00f3ff;
+            margin-bottom: 15px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            color: #fff;
+            text-align: center;
+            font-size: 1rem;
+        }
+        .btn-wa {
+            background-color: #25d366;
+            box-shadow: 0 0 8px #25d366;
+        }
+        .btn-fb {
+            background-color: #0084ff;
+            box-shadow: 0 0 8px #0084ff;
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Müzik Kutusu -->
+    <div class="music-box">
+        <button id="musicToggle" class="music-btn" onclick="toggleMusic()">🎵 Müzik Başlat</button>
+    </div>
+
+    <!-- Müzik Kaynağı -->
+    <audio id="bgMusic" loop preload="auto">
+        <source src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Üst Görseller (Atatürkler ve Ortada Bayraklı Bozkurt) -->
+    <div class="header-avatars">
+        <div class="avatar-frame">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Ataturk_1930s.jpg" alt="Atatürk 1">
+        </div>
+        <div class="avatar-frame">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/1/18/Mustafa_Kemal_Atat%C3%BCrk_1923.jpg" alt="Atatürk 2">
+        </div>
+        <div class="avatar-frame center-logo">
+            <img src="https://images.fineartamerica.com/images/hostedimages/mediumwide/5/12188188.jpg" alt="Türk Bayraklı Bozkurt">
+        </div>
+        <div class="avatar-frame">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c2/Mustafa_Kemal_Ataturk_1925.jpg" alt="Atatürk 3">
+        </div>
+        <div class="avatar-frame">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Mustafa_Kemal_Ataturk_high_res.jpg" alt="Atatürk 4">
+        </div>
+    </div>
+
+    <!-- Ürün Kartları -->
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1626074353765-517a681e40be?w=400" alt="Bükme">
+            <h3>Bükme</h3>
+            <div class="price">20 TL</div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400" alt="Yufka">
+            <h3>Yufka</h3>
+            <div class="price">20 TL</div>
+        </div>
+        <div class="card full-width">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500" alt="Bazlama">
+            <h3>Bazlama</h3>
+            <div class="price">30 TL</div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400" alt="Poğaça">
+            <h3>Poğaça</h3>
+            <div class="price">20 TL</div>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1623334044303-241021148842?w=400" alt="Simit">
+            <h3>Simit</h3>
+            <div class="price">20 TL</div>
+        </div>
+    </div>
+
+    <!-- İletişim Alanı -->
+    <div class="contact-box">
+        <h2>İLETİŞİM</h2>
+        <a href="https://wa.me/905312092005" class="btn btn-wa" target="_blank">WhatsApp 1</a>
+        <a href="https://wa.me/905462099151" class="btn btn-wa" target="_blank">WhatsApp 2</a>
+        <a href="https://m.me/" class="btn btn-fb" target="_blank">Facebook Messenger</a>
+    </div>
+
+    <script>
+        function toggleMusic() {
+            var audio = document.getElementById("bgMusic");
+            var btn = document.getElementById("musicToggle");
+            
+            if (audio.paused) {
+                audio.play();
+                btn.innerHTML = "⏹️ Durdur";
+                btn.style.color = "#ff007f";
+                btn.style.textShadow = "0 0 5px #ff007f";
+                btn.parentElement.style.borderColor = "#ff007f";
+                btn.parentElement.style.boxShadow = "0 0 12px #ff007f";
+            } else {
+                audio.pause();
+                btn.innerHTML = "🎵 Müzik Başlat";
+                btn.style.color = "#00f3ff";
+                btn.style.textShadow = "0 0 5px #00f3ff";
+                btn.parentElement.style.borderColor = "#00f3ff";
+                btn.parentElement.style.boxShadow = "0 0 12px #00f3ff";
+            }
+        }
+    </script>
+
+</body>
+</html>
             margin-bottom: 15px;
         }
         .btn {
