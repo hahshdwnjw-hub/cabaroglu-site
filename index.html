@@ -3,180 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cabar Oğlu</title>
+    <title>Cabaroğlu</title>
     <style>
-        body {
+        * {
+            box-sizing: border-box;
             margin: 0;
+            padding: 0;
+        }
+        body {
             background-color: #0d0d0d;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        /* Üst Profil Barı */
-        .header-avatars {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            padding: 20px 10px;
-            background: #151515;
-            flex-wrap: wrap;
-        }
-
-        .avatar-frame {
-            width: 75px;
-            height: 75px;
-            border-radius: 50%;
-            padding: 4px;
-            background: linear-gradient(135deg, #e6e6e6, #ffffff, #8c8c8c, #ffffff, #595959);
-            box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .avatar-frame.center-logo {
-            width: 90px;
-            height: 90px;
-            box-shadow: 0 0 20px rgba(255, 255, 255, 0.9);
-        }
-
-        .avatar-frame img {
-            width: 100%;
-            height: 100%;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        /* Menü Ürün Alanı */
-        .menu-container {
-            max-width: 600px;
-            margin: 0 auto;
+            color: #ffffff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        .product-card {
-            background: #1a1a1a;
+        /* Sağ Üst Neon Müzik Kutusu */
+        .music-box {
+            position: fixed;
+            top: 15px;
+            right: 15px;
+            background: #16161a;
+            border: 2px solid #00f3ff;
+            box-shadow: 0 0 12px #00f3ff;
+            border-radius: 10px;
+            padding: 8px 12px;
+            z-index: 1000;
+        }
+        .music-btn {
+            background: transparent;
+            border: none;
+            color: #00f3ff;
+            font-weight: bold;
+            font-size: 14px;
+            cursor: pointer;
+            text-shadow: 0 0 5px #00f3ff;
+            outline: none;
+        }
+
+        /* Başlık */
+        h1.title {
+            margin-top: 40px;
+            margin-bottom: 25px;
+            font-size: 2.2rem;
+            color: #ff007f;
+            text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+        }
+
+        /* Ürünler Izgarası */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            width: 100%;
+            max-width: 500px;
+            margin-bottom: 30px;
+        }
+        .card {
+            background: #18181c;
+            border: 1px solid #ff007f;
             border-radius: 12px;
             padding: 15px;
-            margin-bottom: 25px;
-            border: 1px solid #333;
+            text-align: center;
+            box-shadow: 0 0 8px rgba(255, 0, 127, 0.4);
         }
-
-        .product-card img {
+        .card.full-width {
+            grid-column: span 2;
+        }
+        .card img {
             width: 100%;
-            max-height: 250px;
+            height: 110px;
             object-fit: cover;
             border-radius: 8px;
+            margin-bottom: 10px;
         }
-
-        .product-row {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
+        .card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
         }
-
-        .product-row .product-card {
-            flex: 1;
-        }
-
-        .price-neon {
-            font-size: 1.4rem;
+        .price {
+            color: #ff007f;
             font-weight: bold;
-            color: #d400ff;
-            text-shadow: 0 0 5px #d400ff, 0 0 10px #d400ff, 0 0 20px #d400ff;
-            margin-top: 10px;
+            font-size: 1.2rem;
+            text-shadow: 0 0 8px #ff007f;
         }
 
-        /* İletişim Alanı */
+        /* İletişim Kutusu */
         .contact-box {
-            border: 2px solid #00f0ff;
-            box-shadow: 0 0 15px #00f0ff;
-            border-radius: 10px;
-            padding: 20px;
-            margin: 30px auto;
+            width: 100%;
             max-width: 500px;
-            background: #111;
+            background: #121215;
+            border: 2px solid #00f3ff;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 0 15px #00f3ff;
+            text-align: center;
         }
-
-        .contact-title {
-            color: #00f0ff;
-            text-shadow: 0 0 8px #00f0ff;
-            font-size: 1.5rem;
+        .contact-box h2 {
+            color: #00f3ff;
+            text-shadow: 0 0 10px #00f3ff;
             margin-bottom: 15px;
-            font-weight: bold;
         }
-
-        .btn-contact {
+        .btn {
             display: block;
+            width: 100%;
             padding: 12px;
-            margin: 10px 0;
-            border-radius: 6px;
+            margin-bottom: 10px;
+            border-radius: 8px;
             text-decoration: none;
-            color: white;
             font-weight: bold;
-            transition: 0.3s;
+            color: #fff;
+            text-align: center;
+            font-size: 1rem;
         }
-
-        .btn-wa { background: #25D366; }
-        .btn-fb { background: #0084FF; }
+        .btn-wa {
+            background-color: #25d366;
+            box-shadow: 0 0 8px #25d366;
+        }
+        .btn-fb {
+            background-color: #0084ff;
+            box-shadow: 0 0 8px #0084ff;
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
 
-    <div class="header-avatars">
-        <div class="avatar-frame"><img src="resim-url-buraya" alt="Atatürk"></div>
-        <div class="avatar-frame"><img src="resim-url-buraya" alt="Metehan"></div>
-        <div class="avatar-frame center-logo"><img src="resim-url-buraya" alt="Cabar Oğlu Logo"></div>
-        <div class="avatar-frame"><img src="resim-url-buraya" alt="Fatih Sultan Mehmet"></div>
-        <div class="avatar-frame"><img src="resim-url-buraya" alt="Ata 4"></div>
-        <div class="avatar-frame"><img src="resim-url-buraya" alt="Ata 5"></div>
+    <!-- Müzik Kutusu -->
+    <div class="music-box">
+        <button id="musicToggle" class="music-btn" onclick="toggleMusic()">🎵 Müzik Başlat</button>
     </div>
 
-    <div class="menu-container">
-        <div class="product-card">
-            <img src="resim-url-buraya" alt="Katmer">
-            <h3>Katmer</h3>
-            <div class="price-neon">85 TL</div>
-        </div>
+    <!-- Müzik Kaynağı (Arayı Arayı) -->
+    <audio id="bgMusic" loop>
+        <source src="https://upload.wikimedia.org/wikipedia/commons/2/20/Aray%C4%B1_Aray%C4%B1_Bulsam_Izini.ogg" type="audio/ogg">
+    </audio>
 
-        <div class="product-row">
-            <div class="product-card">
-                <img src="resim-url-buraya" alt="Bükme">
-                <h3>Bükme</h3>
-            </div>
-            <div class="product-card">
-                <img src="resim-url-buraya" alt="Yufka">
-                <h3>Yufka</h3>
-            </div>
+    <h1 class="title">Cabaroğlu</h1>
+
+    <!-- Ürün Kartları -->
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1626074353765-517a681e40be?w=400" alt="Bükme">
+            <h3>Bükme</h3>
+            <div class="price">20 TL</div>
         </div>
-        
-        <div class="product-card">
-            <img src="resim-url-buraya" alt="Bazlama">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=400" alt="Yufka">
+            <h3>Yufka</h3>
+            <div class="price">20 TL</div>
+        </div>
+        <div class="card full-width">
+            <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?w=500" alt="Bazlama">
             <h3>Bazlama</h3>
-            <div class="price-neon">30 TL</div>
+            <div class="price">30 TL</div>
         </div>
-
-        <div class="product-row">
-            <div class="product-card">
-                <img src="resim-url-buraya" alt="Poğaça">
-                <h3>Poğaça</h3>
-            </div>
-            <div class="product-card">
-                <img src="resim-url-buraya" alt="Simit">
-                <h3>Simit</h3>
-            </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400" alt="Poğaça">
+            <h3>Poğaça</h3>
+            <div class="price">20 TL</div>
         </div>
-        <div class="price-neon">20 TL</div>
-
-        <div class="contact-box">
-            <div class="contact-title">İLETİŞİM</div>
-            <a href="https://wa.me/905312092005" class="btn-contact btn-wa">WhatsApp 1 (+90 531 209 20 05)</a>
-            <a href="https://wa.me/905462099151" class="btn-contact btn-wa">WhatsApp 2 (+90 546 209 91 51)</a>
-            <a href="https://m.me/Cabaroglu" class="btn-contact btn-fb">Facebook Messenger (Cabar oğlu)</a>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1623334044303-241021148842?w=400" alt="Simit">
+            <h3>Simit</h3>
+            <div class="price">20 TL</div>
         </div>
     </div>
+
+    <!-- İletişim Alanı -->
+    <div class="contact-box">
+        <h2>İLETİŞİM</h2>
+        <a href="https://wa.me/905312092005" class="btn btn-wa" target="_blank">WhatsApp 1</a>
+        <a href="https://wa.me/905462099151" class="btn btn-wa" target="_blank">WhatsApp 2</a>
+        <a href="https://m.me/" class="btn btn-fb" target="_blank">Facebook Messenger</a>
+    </div>
+
+    <script>
+        function toggleMusic() {
+            var audio = document.getElementById("bgMusic");
+            var btn = document.getElementById("musicToggle");
+            
+            if (audio.paused) {
+                audio.play();
+                btn.innerHTML = "⏹️ Durdur";
+                btn.style.color = "#ff007f";
+                btn.style.textShadow = "0 0 5px #ff007f";
+                btn.parentElement.style.borderColor = "#ff007f";
+                btn.parentElement.style.boxShadow = "0 0 12px #ff007f";
+            } else {
+                audio.pause();
+                btn.innerHTML = "🎵 Müzik Başlat";
+                btn.style.color = "#00f3ff";
+                btn.style.textShadow = "0 0 5px #00f3ff";
+                btn.parentElement.style.borderColor = "#00f3ff";
+                btn.parentElement.style.boxShadow = "0 0 12px #00f3ff";
+            }
+        }
+    </script>
 
 </body>
 </html>
