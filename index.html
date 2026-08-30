@@ -16,94 +16,68 @@
             margin: 0;
             padding: 10px;
         }
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
+
+        /* Sol Üst Üç Nokta Menü Butonu */
+        .menu-icon-container {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            z-index: 10;
         }
-        .logo {
-            max-width: 180px;
-            width: 100%;
-            height: auto;
-            margin: 10px auto;
-            display: block;
-            border-radius: 50%;
-            box-shadow: 0 0 20px rgba(255, 42, 109, 0.4);
-        }
-        h1 {
-            color: #ff2a6d;
-            font-size: 2.2rem;
-            margin: 15px 0;
-            text-shadow: 0 0 10px rgba(255, 42, 109, 0.5);
-        }
-        .music-btn {
-            background: transparent;
+        .dots-btn {
+            background: #1e1e1e;
             color: #00f3ff;
             border: 2px solid #00f3ff;
-            padding: 8px 16px;
-            border-radius: 20px;
+            font-size: 1.5rem;
+            padding: 4px 12px;
+            border-radius: 8px;
             cursor: pointer;
-            font-weight: bold;
-            box-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
             transition: 0.3s;
         }
-        .music-btn:hover {
+        .dots-btn:hover {
             background: #00f3ff;
             color: #121212;
         }
-        .menu-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            max-width: 900px;
-            margin: 20px auto;
-            padding: 10px;
-        }
-        .menu-card {
-            background: #1e1e1e;
-            border: 2px solid #ff2a6d;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0 0 15px rgba(255, 42, 109, 0.2);
-            transition: transform 0.2s;
-        }
-        .menu-card:hover {
-            transform: translateY(-5px);
-        }
-        .menu-card img {
+
+        /* İletişim Açılır Kutusu (Modal) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
             width: 100%;
-            height: 180px;
-            object-fit: cover;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            justify-content: center;
+            align-items: center;
         }
-        .menu-info {
-            padding: 15px;
+        .modal-content {
+            background: #1a1a1a;
+            border: 3px solid #00f3ff;
+            padding: 25px;
+            width: 85%;
+            max-width: 350px;
+            border-radius: 15px;
+            box-shadow: 0 0 25px rgba(0, 243, 255, 0.6);
+            text-align: left;
+            position: relative;
         }
-        .menu-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            margin-bottom: 10px;
+        .modal-content h3 {
+            color: #00f3ff;
+            text-align: center;
+            margin-top: 0;
+            text-shadow: 0 0 8px rgba(0, 243, 255, 0.5);
         }
-        .menu-price {
-            font-size: 1.2rem;
-            color: #ff2a6d;
-            font-weight: bold;
+        .modal-content p {
+            color: #fff;
+            font-size: 1rem;
+            margin: 10px 0;
         }
-    </style>
-</head>
-<body>
-
-    <!-- Üst Bar ve Müzik Butonu -->
-    <div style="display: flex; justify-content: flex-end; padding: 10px;">
-        <button class="music-btn" onclick="toggleMusic()">🎵 Müzik Başlat</button>
-    </div>
-
-    <!-- Yazısız ve Temizlenmiş Logo -->
-    <img src="cabaroglu-logo.png" alt="Cabaroğlu Logo" class="logo">
-    
-    <h1>Cabaroğlu</h1>
-
-    <!-- Menü Kartları -->
+        .close-btn {
+            position: absolute;
+            top: 8px
     <div class="menu-grid">
         <div class="menu-card">
             <img src="0ce6f1c6693cf29fb137ae5f5b2d370.jpg" alt="Bükme">
