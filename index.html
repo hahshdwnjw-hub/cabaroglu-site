@@ -57,8 +57,8 @@
             background: #121212;
             border: 3px solid #00f3ff;
             padding: 30px;
-            width: 85%;
-            max-width: 340px;
+            width: 90%;
+            max-width: 360px;
             border-radius: 15px;
             box-shadow: 0 0 30px rgba(0, 243, 255, 0.8), inset 0 0 15px rgba(0, 243, 255, 0.4);
             text-align: left;
@@ -68,15 +68,24 @@
             color: #00f3ff;
             text-align: center;
             margin-top: 0;
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             text-shadow: 0 0 10px rgba(0, 243, 255, 0.8);
             letter-spacing: 1px;
         }
         .modal-content p {
-            color: #ffffff;
-            font-size: 1.1rem;
             margin: 15px 0;
-            text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
+            font-size: 1.1rem;
+        }
+        .modal-content a {
+            color: #00f3ff;
+            text-decoration: none;
+            font-weight: bold;
+            text-shadow: 0 0 5px rgba(0, 243, 255, 0.5);
+            transition: 0.2s;
+        }
+        .modal-content a:hover {
+            color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
         }
         .close-btn {
             position: absolute;
@@ -181,9 +190,9 @@
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
             <h3>İLETİŞİM</h3>
-            <p><strong>İsim:</strong> [İsminiz]</p>
-            <p><strong>Telefon:</strong> [Numaranız]</p>
-            <p><strong>Adres:</strong> [Yeriniz]</p>
+            <p>📞 <a href="tel:+905312092005">+90 531 209 20 05</a></p>
+            <p>📞 <a href="tel:+905462099151">+90 546 209 91 51</a></p>
+            <p>💬 <a href="https://m.me/cabaroglu" target="_blank">Facebook: Cabar oğlu</a></p>
         </div>
     </div>
 
@@ -267,41 +276,6 @@
             } else {
                 music.pause();
                 btn.innerText = "🎵 Müzik Başlat";
-            }
-        }
-    </script>
-
-</body>
-</html>
-            <img src="78e4869d982a8c62416547d3ee856265.jpg" alt="Poğaça">
-            <div class="menu-info">
-                <div class="menu-title">Poğaça</div>
-                <div class="menu-price">20 TL</div>
-            </div>
-        </div>
-
-        <div class="menu-card">
-            <img src="dc5973100a40fdocae36ef610cbed216.jpg" alt="Simit">
-            <div class="menu-info">
-                <div class="menu-title">Simit</div>
-                <div class="menu-price">20 TL</div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Arka Plan Müzik Kontrolü için Gizli Element (İsteğe bağlı eklenebilir) -->
-    <audio id="bgMusic" loop>
-        <!-- <source src="muzik-dosyaniz.mp3" type="audio/mpeg"> -->
-    </audio>
-
-    <script>
-        function toggleMusic() {
-            var music = document.getElementById("bgMusic");
-            if (music.paused) {
-                // music.play(); Uncomment when audio source is added
-                alert("Müzik çalmak için kaynak eklemelisiniz.");
-            } else {
-                music.pause();
             }
         }
     </script>
